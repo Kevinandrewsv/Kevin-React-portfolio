@@ -1,0 +1,187 @@
+/* MyWork Section */
+.mywork {
+  padding: 70px 0;
+  background-color: #ecdcdcf8;
+  text-align: center;
+  width: 100%;
+}
+
+/* Title Styling */
+.title-box h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+  padding-bottom: 10px;
+}
+
+/* Tab Buttons */
+.tab-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 0 auto 35px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+}
+
+.tab-button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #666;
+  background-color: #ac9999;
+  border: 1px solid #FF2D55;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Hover and Active State */
+.tab-button.active,
+.tab-button:hover {
+  background: linear-gradient(270deg, #a31010 10%, #FF2D55 100%);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(60, 8, 36, 0.674);
+  transform: scale(1.05);
+}
+
+/* Tab Content */
+.tab-content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #dec0c0;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.tab-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.tab-content img:hover {
+  transform: scale(1.04);
+}
+
+.tab-content p {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  text-align: justify;
+  padding: 0 10px;
+}
+
+/* Strong Tag Styling */
+.tab-content p strong {
+  color: #FF2D55;
+  font-weight: 700;
+  background-color: rgba(255, 45, 85, 0.1);
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+/* Visit Button Styling */
+.visit-button {
+  display: inline-block;
+  padding: 14px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(270deg, #a31010 10%, #FF2D55 100%);
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(90, 12, 54, 0.674);
+}
+
+.visit-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px #FF2D55;
+}
+
+/* Responsive Design for Medium Screens (Tablets) */
+@media (max-width: 768px) {
+  .title-box h1 {
+    font-size: 2.2rem;
+  }
+
+  .tab-content {
+    padding: 30px;
+  }
+
+  .tab-button {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+
+  .visit-button {
+    padding: 12px 28px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Responsive Design for Small Screens (Mobile) */
+@media (max-width: 480px) {
+  .title-box h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .tab-buttons {
+    gap: 8px;
+  }
+
+  .tab-buttons {
+    gap: 8px;
+  }
+
+  @media (max-width: 480px) {
+    .tab-button {
+      width: 12px; /* Small circle size */
+      height: 12px; /* Small circle size */
+      padding: 0; /* Remove padding */
+      font-size: 0; /* Hide text */
+      background-color: #FF2D55;
+      border-radius: 50%; /* Make it circular */
+      border: none;
+    }
+  
+    /* Active and Hover States */
+    .tab-button.active,
+    .tab-button:hover {
+      background-color: #a31010; /* Darker color for active/hover state */
+      transform: scale(1.2); /* Slightly enlarge on hover */
+    }
+  }
+
+
+  .tab-content {
+    padding: 20px;
+    margin: 0 10px;
+  }
+
+  .tab-content p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    padding: 0 5px;
+    color: #333;
+  }
+
+  .visit-button {
+    padding: 10px 24px;
+    font-size: 0.9rem;
+    width: 100%;
+    margin-top: 20px;
+  }
+}

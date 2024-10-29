@@ -1,0 +1,139 @@
+/* Services Section */
+.services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin: 70px 10%;
+}
+
+.services-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+/* Service Box Formatting */
+.services-format {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 30px;
+  border-radius: 10px;
+  border: 2px solid white;
+  transition: transform 0.4s, border-color 0.4s, background-image 0.4s;
+  cursor: pointer;
+  text-align: center; /* Center-aligns text */
+}
+
+/* Service Title */
+.services-format h3 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* Service Heading with Gradient */
+.services-format h2 {
+  font-size: 28px;
+  font-weight: 800;
+  background: linear-gradient(270deg, #a31010 10%, #FF2D55 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Service Description */
+.services-format p {
+  color: #0f0d0d;
+  font-size: 18px;
+  line-height: 28px;
+  max-width: 250px;
+}
+
+/* Read More Section */
+.services-readmore {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.services-readmore img {
+  width: 20px;
+}
+
+/* Hover Effect */
+.services-format:hover {
+  border-color: #ff3700;
+  background-image: linear-gradient(45deg, #693f597a, #64544a68);
+  transform: scale(1.05);
+}
+
+/* Responsive Design for Medium Screens (Tablets and up) */
+@media (max-width: 768px) {
+  .services {
+    align-items: flex-start;
+    gap: 70px;
+    margin: 20px 6%;
+  }
+  
+  .services-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .services-format {
+    padding: 20px;
+    gap: 10px;
+  }
+
+  .services-format h2 {
+    font-size: 22px;
+  }
+
+  .services-format p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+/* Responsive Design for Small Screens (Mobile) */
+@media (max-width: 480px) {
+  .services-container {
+    grid-template-columns: 1fr; /* One service per row */
+    gap: 15px;
+  }
+
+  .services-format {
+    padding: 15px;
+    gap: 8px;
+    border-radius: 8px;
+  }
+
+  .services-format h2 {
+    font-size: 20px;
+  }
+
+  .services-format h3 {
+    font-size: 18px;
+  }
+
+  .services-format p {
+    font-size: 14px;
+    line-height: 22px;
+    max-width: 100%; /* Full width for readability */
+  }
+
+  .services-readmore {
+    gap: 6px;
+    margin-top: 15px;
+  }
+
+  .services-readmore img {
+    width: 18px;
+  }
+}

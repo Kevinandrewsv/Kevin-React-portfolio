@@ -1,0 +1,201 @@
+/* General Navbar Styles */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 10%;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 40px;
+    font-size: 16px;
+}
+
+.nav-connect {
+    padding: 15px 20px;
+    border-radius: 50px;
+    background: linear-gradient(264deg, #a31010 10%, #FF2D55 100%);
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.logo {
+    width: 100px;
+}
+
+.nav-connect:hover {
+    transform: scale(1.05);
+}
+
+.nav-menu li {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.nav-menu li img {
+    display: flex;
+    margin: auto;
+}
+
+/* Anchor Link Styles */
+.anchor-link {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Underline effect using ::after pseudo-element */
+.anchor-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #ff6363;  /* Customize underline color */
+    left: 0;
+    bottom: -3px;
+    transition: width 0.3s ease;  /* Smooth transition effect */
+}
+
+.anchor-link:hover::after {
+    width: 100%;  /* Expands the underline */
+}
+
+.anchor-link:hover {
+    color: #ff6363;  /* Optional: change text color on hover */
+}
+
+/* Mobile Menu Styles */
+.nav-mob-close {
+    display: none;
+    cursor: pointer;
+}
+
+.nav-mob-open {
+    display: none;
+    cursor: pointer;
+    width: 30px;
+}
+
+/* Mobile Sidebar (Responsive) */
+@media (max-width: 768px) {
+    .navbar {
+        margin: 20px 5%; /* Reduced margin for better spacing */
+    }
+
+    .nav-connect {
+        display: none; /* Hide connect button on mobile */
+    }
+
+    .nav-mob-open {
+        display: block; /* Show mobile menu icon */
+        position: absolute;
+        right: 30px;
+    }
+
+    .nav-mob-close {
+        display: block; /* Show close icon */
+        position: absolute;
+        top: 30px;
+        right: 7%;
+        width: 30px;
+    }
+
+    .navbar ul {
+        position: fixed;
+        flex-direction: column;
+        align-items: flex-start; /* Align links to the left */
+        top: 0;
+        gap: 30px;
+        background-color: #1F0016;
+        width: 300px; /* Sidebar width */
+        height: 100%;
+        z-index: 2;
+        transition: right 0.5s; /* Transition effect for opening/closing */
+        right: -300px; /* Initially off-screen */
+        padding-top: 100px; /* Padding at the top for the logo or first item */
+    }
+
+    /* Toggle Sidebar Open */
+    .navbar ul.open {
+        right: 0; /* Bring sidebar into view */
+    }
+
+    /* Mobile Menu Links */
+    .nav-menu li {
+        font-size: 22px; /* Larger font for readability */
+        padding-left: 50px; /* Indentation for menu items */
+        flex-direction: row; /* Ensure items are horizontal */
+        gap: 20px; /* Space between items */
+    }
+
+    /* Mobile Anchor Link Hover Effect */
+    .anchor-link {
+        font-size: 22px;  /* Increase link size for mobile */
+        color: white; /* Change color for better visibility */
+        position: relative;
+        transition: color 0.3s ease;
+    }
+
+    .anchor-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background: #ff6363;  /* Customize underline color */
+        left: 0;
+        bottom: -3px;
+        transition: width 0.3s ease;
+    }
+
+    .anchor-link:hover::after {
+        width: 100%; /* Expands the underline */
+    }
+
+    .anchor-link:hover {
+        color: #ff6363;  /* Optional: change text color on hover */
+    }
+}
+
+/* Extra Small Mobile Adjustments */
+@media (max-width: 480px) {
+    .navbar {
+        margin: 20px 2%; /* Even smaller margins on extra small screens */
+    }
+
+   /* Mobile Menu Styles */
+.nav-menu {
+    position: fixed;
+    flex-direction: column;
+    align-items: start;
+    top: 0;
+    gap: 30px;
+    background-color: #1F0016;
+    width: 300px;
+    height: 100%;
+    z-index: 2;
+    transition: right 0.5s;
+    right: -300px; /* Initially hidden */
+}
+    .nav-menu li {
+        font-size: 18px; /* Slightly smaller font for very small screens */
+    }
+
+    .nav-connect {
+        font-size: 14px; /* Smaller font size for mobile connect button */
+    }
+
+    .nav-menu.open {
+        right: 0; /* Show menu */
+    }
+
+    .nav-mob-close {
+        width: 25px; /* Smaller close menu icon */
+    }
+}
