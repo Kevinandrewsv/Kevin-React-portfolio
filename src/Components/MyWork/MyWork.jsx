@@ -57,6 +57,7 @@ const MyWork = () => {
       <div id="swipe-content" className="tab-content">
         <img src={mywork_data[activeTab].w_img} alt={`${mywork_data[activeTab].w_title} project`} />
         <p><strong>Purpose:</strong> {mywork_data[activeTab].w_description1}</p>
+        <p><strong>Tech Stack Used:</strong>{mywork_data[activeTab].w_description0}</p>
         <p><strong>Challenges & Learnings:</strong> {mywork_data[activeTab].w_description2}</p>
         <a href={mywork_data[activeTab].w_link} target="_blank" rel="noopener noreferrer" className="visit-button">
           Visit Website

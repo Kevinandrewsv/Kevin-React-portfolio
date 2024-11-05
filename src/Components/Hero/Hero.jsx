@@ -13,10 +13,9 @@ const Hero = () => {
         <div className="hero-connect"><AnchorLink className='anchor-link' offset={50} href='#contact'>Connect with me</AnchorLink></div>
         <div className="hero-resume">
         <a 
-            href={resume}// Ensure the path is correct
+            href= "https://drive.google.com/file/d/1j-QfHqvL1Et-gJCG4jmoZ4gpa4r3Hjfr/view?usp=sharing"
             target="_blank" 
             rel="noopener noreferrer" 
-            download // This will prompt the download
           >
         My resume</a></div>
       </div>
