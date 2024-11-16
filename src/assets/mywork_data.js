@@ -27,7 +27,7 @@ const mywork_data = [
       w_description0: "Frontend: Reactjs, Backend: Nodejs/Expressjs, Database: MongoDB on AWS.",
       w_description1:"The DoctSite app was created to simplify the process of booking doctor appointments, providing users with a quick and intuitive interface. It allows patients to easily search for doctors, view available time slots, and book appointments online. The responsive design ensures accessibility across all devices, making it convenient for users on the go.",
       w_description2:"Developing DoctSite presented several challenges, including integrating a robust calendar system to manage and display doctor availability accurately. I faced difficulties in ensuring seamless user authentication, which required implementing secure practices for login and registration processes. Additionally, optimizing the app for mobile devices was crucial, as it involved adjusting layouts and functionalities for different screen sizes. Finally, I focused on error handling and providing meaningful feedback to users during the appointment booking process, enhancing overall user experience.",
-      w_link: "https://doctsite.netlify.app/"
+      w_link: "https://doct-pointment.netlify.app/"
     },
     {
       w_title: "KevinAI",
