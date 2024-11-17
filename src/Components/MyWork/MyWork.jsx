@@ -59,9 +59,33 @@ const MyWork = () => {
         <p><strong>Purpose:</strong> {mywork_data[activeTab].w_description1}</p>
         <p><strong>Tech Stack Used:</strong>{mywork_data[activeTab].w_description0}</p>
         <p><strong>Challenges & Learnings:</strong> {mywork_data[activeTab].w_description2}</p>
-        <a href={mywork_data[activeTab].w_link} target="_blank" rel="noopener noreferrer" className="visit-button">
-          Visit Website
-        </a>
+        
+        <div className="button-container">
+          <a
+            href={mywork_data[activeTab].g_linkf}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="visit-button"
+          >
+            Frontend Code
+          </a>
+          <a
+            href={mywork_data[activeTab].w_linkb}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="visit-button"
+          >
+            Backend Code
+          </a>
+          <a
+            href={mywork_data[activeTab].w_link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="visit-button"
+          >
+            Visit Website
+          </a>
+        </div>
       </div>
     </div>
   );

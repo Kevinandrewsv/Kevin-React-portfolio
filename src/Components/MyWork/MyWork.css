@@ -30,8 +30,8 @@
   padding: 12px 24px;
   font-size: 1rem;
   font-weight: 600;
-  color: #666;
-  background-color: #ac9999;
+  color: #141313;
+  background-color: #e3dede;
   border: 1px solid #FF2D55;
   border-radius: 20px;
   cursor: pointer;
@@ -53,7 +53,7 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  background-color: #dec0c0;
+  background-color: #dbc3c3;
   padding: 40px;
   border-radius: 15px;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
@@ -74,7 +74,7 @@
 
 .tab-content p {
   font-size: 1.1rem;
-  color: #333;
+  color: #141313;
   line-height: 1.8;
   margin-bottom: 20px;
   text-align: justify;
@@ -90,10 +90,19 @@
   border-radius: 4px;
 }
 
+/* Button Container Styling */
+.button-container {
+  display: flex;
+  flex-wrap: wrap; /* Wrap buttons on smaller screens */
+  justify-content: center; /* Center-align buttons */
+  gap: 20px; /* Add spacing between buttons */
+  margin-top: 30px; /* Add margin above the buttons */
+}
+
 /* Visit Button Styling */
 .visit-button {
   display: inline-block;
-  padding: 14px 32px;
+  padding: 12px 28px;
   font-size: 1rem;
   font-weight: 600;
   color: #ffffff;
@@ -102,8 +111,10 @@
   text-decoration: none;
   transition: all 0.3s ease;
   box-shadow: 0 4px 12px rgba(90, 12, 54, 0.674);
+  margin: 10px; /* Add margin for spacing */
 }
 
+/* Hover Effect */
 .visit-button:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 16px #FF2D55;
@@ -125,7 +136,7 @@
   }
 
   .visit-button {
-    padding: 12px 28px;
+    padding: 10px 24px;
     font-size: 0.95rem;
   }
 }
@@ -137,34 +148,6 @@
     margin-bottom: 20px;
   }
 
-  .tab-buttons {
-    gap: 8px;
-  }
-
-  .tab-buttons {
-    gap: 8px;
-  }
-
-  @media (max-width: 480px) {
-    .tab-button {
-      width: 12px; /* Small circle size */
-      height: 12px; /* Small circle size */
-      padding: 0; /* Remove padding */
-      font-size: 0; /* Hide text */
-      background-color: #FF2D55;
-      border-radius: 50%; /* Make it circular */
-      border: none;
-    }
-  
-    /* Active and Hover States */
-    .tab-button.active,
-    .tab-button:hover {
-      background-color: #a31010; /* Darker color for active/hover state */
-      transform: scale(1.2); /* Slightly enlarge on hover */
-    }
-  }
-
-
   .tab-content {
     padding: 20px;
     margin: 0 10px;
@@ -175,13 +158,43 @@
     line-height: 1.5;
     margin-bottom: 15px;
     padding: 0 5px;
-    color: #333;
   }
 
   .visit-button {
-    padding: 10px 24px;
-    font-size: 0.9rem;
-    width: 100%;
-    margin-top: 20px;
+    width: 100%; /* Make buttons full-width on small screens */
+    text-align: center;
+  }
+
+  .button-container {
+    gap: 15px;
+  }
+  .tab-button {
+    width: 13px; /* Fixed size for small buttons */
+    height: 13px;
+    padding: 0; /* Remove inner padding */
+    font-size: 0; /* Hide original text */
+    background-color: #FF2D55;
+    border-radius: 50%; /* Circular buttons */
+    border: none;
+    position: relative; /* Allow pseudo-elements for dots */
+  }
+
+  .tab-button::before {
+    content: ""; /* Display four dots */
+    font-size: 0rem; /* Adjust dot size */
+    color: #ffffff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    line-height: 1;
+  }
+
+  .tab-button.active,
+  .tab-button:hover {
+    background-color: #a31010; /* Darker color for active/hover state */
+    transform: scale(1.2); /* Slightly enlarge on hover */
   }
 }
+
