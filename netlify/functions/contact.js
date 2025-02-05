@@ -7,7 +7,7 @@ exports.handler = async (event) => {
 
   const { name, email, message } = JSON.parse(event.body);
 
-  const brevoAPIKey = "YOUR_BREVO_API_KEY"; // Replace with your actual Brevo API Key
+  const brevoAPIKey = "6Np2tgn0v1mG4AcP"; // Replace with your actual Brevo API Key
   const brevoEndpoint = "https://api.brevo.com/v3/smtp/email";
 
   const emailData = {
