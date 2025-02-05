@@ -10,25 +10,28 @@ const Contact = () => {
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    const formData = {
-      name: event.target.name.value,
-      email: event.target.email.value,
-      message: event.target.message.value,
-    };
+    const formData = new FormData(event.target);
+    formData.append("access_key", "3291b25d-37f4-4e84-b233-4a42be6d4ffc");
+    
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
 
     try {
-      const res = await fetch("/.netlify/functions/contact", {
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: json,
       });
 
       const data = await res.json();
 
       if (data.success) {
-        setIsSubmitted(true);
+        setIsSubmitted(true); // Hide form and show confirmation message
       } else {
-        alert("Failed to send message. Please try again.");
+        alert("Failed to send message: " + data.message);
       }
     } catch (error) {
       alert("An error occurred. Please try again later.");
@@ -37,7 +40,7 @@ const Contact = () => {
   };
 
   const resetForm = () => {
-    setIsSubmitted(false);
+    setIsSubmitted(false); // Reset the submission state to show the form again
   };
 
   return (
@@ -58,6 +61,7 @@ const Contact = () => {
             </div>
           </div>
 
+          {/* Social Media Links */}
           <div className="social-links">
             <a href="https://www.linkedin.com/in/kevinandrewsv/" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faLinkedin} size="2x" />
@@ -71,6 +75,7 @@ const Contact = () => {
           </div>
         </div>
 
+        {/* Conditionally render form or success message */}
         {isSubmitted ? (
           <div className="thank-you-message">
             <h2>Thank you for reaching out!</h2>
@@ -79,11 +84,11 @@ const Contact = () => {
           </div>
         ) : (
           <form onSubmit={onSubmit} className="contact-right">
-            <label>Your Name</label>
+            <label htmlFor="">Your Name</label>
             <input type="text" placeholder='Enter your name' name='name' required />
-            <label>Your Email</label>
+            <label htmlFor="">Your Email</label>
             <input type="email" placeholder='Enter your email' name='email' required />
-            <label>Write your message here</label>
+            <label htmlFor="">Write your message here</label>
             <textarea name="message" rows="8" placeholder='Enter your message' required></textarea>
             <button type='submit' className="contact-submit">Submit now</button>
           </form>
